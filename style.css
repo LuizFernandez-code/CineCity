@@ -197,6 +197,48 @@ body {
 .aanraders {
     padding: 100px 0;
 }
+
+/* FIX 3 AANRADERS GRID */
+.aanraders .film-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+.aanraders .film-card {
+    background: rgba(255,255,255,0.05);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Zorg dat alle beelden even groot zijn */
+.aanraders .film-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Centreer 'Bekijk alle films' knop */
+.aanraders .view-all-films {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+/* MOBILE FIX */
+@media (max-width: 900px) {
+    .aanraders .film-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ============================
    FILMS PAGINA – NETTE CARDS
 ============================ */
