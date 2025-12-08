@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéCity – City After Dark</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">CINÉ<br>CITY</div>
+
+    <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="films.html">Films</a>
+        <a href="tickets.html">Tickets</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div class="neon-bg"></div>
+
+<!-- HERO -->
+<section class="hero fade-in">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div class="hero-text">
+                <h1 class="title">
+                    CINÉCITY<br><span>CITY AFTER DARK</span>
+                </h1>
+
+                <p class="subtitle">Filmfestival Antwerpen — Eerste Editie</p>
+
+                <p class="description">
+                    CinéCity toont werk van nieuwe stemmen én gevestigde makers, 
+                    met aandacht voor diversiteit, experiment en de kracht van visuele verhalen. 
+                    Geen klassieke rode loper — enkel pure cinema in de stad.
+                </p>
+
+                <a href="tickets.html" class="btn-primary">Tickets kopen</a>
+            </div>
+
+            <div class="hero-img glass">
+                <img src="img/keyvisual.jpg" alt="Keyvisual">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WELCOME -->
+<section class="welcome fade-in">
+    <div class="container">
+        <h2>Welkom bij de eerste editie van CinéCity</h2>
+        <p>
+            Antwerpen vormt tien dagen lang het decor voor filmvertoningen, installaties, gesprekken en ontmoetingen.  
+            Met CinéCity tonen we films die de stad niet alleen gebruiken als decor, maar als actieve speler.  
+        </p>
+        <p class="credits">— Sara Vermeer & Amir El-Baz, Programmatoren CinéCity</p>
+    </div>
+</section>
+
+<!-- PROGRAMMA -->
+<section class="programma fade-in">
+    <div class="container programma-grid">
+
+        <div class="prog-block">
+            <h3>Coming of Age (dagprogramma)</h3>
+            <p>
+                Films over groeien, falen, veranderen en jezelf heruitvinden.
+                Verhalen vol kwetsbaarheid, vrijheid en identiteit.
+            </p>
+        </div>
+
+        <div class="prog-block">
+            <h3>City After Dark (avondprogramma)</h3>
+            <p>
+                Films die spelen wanneer de stad verandert in een universum van neon, ritmes, dromen en schaduwen.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 3 AANRADERS -->
+<section class="aanraders fade-in">
+    <div class="container">
+        <h2 class="recommendations-title">3 Aanraders</h2>
+
+        <div class="film-grid">
+            <div class="film-card">
+                <img src="films/BELOW THE CLOUDS_01 (1).jpg">
+                <h3>Below the Clouds</h3>
+                <p>2025 — Documentaire</p>
+            </div>
+
+            <div class="film-card">
+                <img src="films/EXIT8_01.jpg">
+                <h3>Exit 8</h3>
+                <p>2025 — Horror / Thriller</p>
+            </div>
+
+            <div class="film-card">
+                <img src="films/DRACULA_01.jpg">
+                <h3>Dracula</h3>
+                <p>2025 — Komedie / Horror</p>
+            </div>
+        </div>
+
+        <div class="view-all-films">
+            <a href="films.html" class="btn-primary">Bekijk alle films →</a>
+        </div>
+    </div>
+</section>
+
+<!-- LOCATIES -->
+<section class="locaties fade-in">
+    <div class="container">
+
+        <h2>Locaties</h2>
+
+        <ul class="loc-list" id="locList">
+            <li data-loc="0">Cinema Zuid – Lakenstraat 14</li>
+            <li data-loc="1">De Studio – Maarschalk Gérardstraat 4</li>
+            <li data-loc="2">FOMU – Waalsekaai 47</li>
+            <li data-loc="3">Permeke – De Coninckplein 26</li>
+            <li data-loc="4">AP Campus Keizerstraat</li>
+            <li data-loc="5">AP Campus Spoor Noord</li>
+        </ul>
+
+        <div id="map" class="leaflet-map"></div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    © 2025 CinéCity — City After Dark
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

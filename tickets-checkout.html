@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéCity – Ticket Aankoop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">CINÉ<br>CITY</div>
+
+    <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="films.html">Films</a>
+        <a href="tickets.html">Tickets</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div class="neon-bg"></div>
+
+<section class="checkout-header">
+    <h1>Ticket Aankoop</h1>
+    <p>Selecteer jouw aantal tickets. Het totaal berekent automatisch.</p>
+</section>
+
+<div class="neon-bg"></div>
+
+
+        <div class="checkout-box">
+
+            <div class="ticket-row">
+    <span>Standaard Ticket (€9)</span>
+    <input type="number" min="0" value="0" class="ticket-input" data-price="9">
+</div>
+
+<div class="ticket-row">
+    <span>Jongeren (-26) (€6)</span>
+    <input type="number" min="0" value="0" class="ticket-input" data-price="6">
+</div>
+
+<div class="ticket-row">
+    <span>Studenten (€5)</span>
+    <input type="number" min="0" value="0" class="ticket-input" data-price="5">
+</div>
+
+<div class="ticket-row">
+    <span>5-Rittenkaart (€25)</span>
+    <input type="number" min="0" value="0" class="ticket-input" data-price="25">
+</div>
+
+
+            <hr>
+
+            <div class="total">
+                Totaal: <span id="totalPrice">€0</span>
+            </div>
+
+            <a href="#" class="btn-primary">Afrekenen →</a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    © 2025 CinéCity — City After Dark
+</footer>
+
+<script>
+document.querySelectorAll('.ticket-input').forEach(input => {
+    input.addEventListener('input', updateTotal);
+});
+
+function updateTotal() {
+    let total = 0;
+    document.querySelectorAll('.ticket-input').forEach(input => {
+        const amount = Number(input.value);
+        const price = Number(input.dataset.price);
+        total += amount * price;
+    });
+    document.getElementById('totalPrice').textContent = "€" + total;
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

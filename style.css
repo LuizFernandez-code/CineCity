@@ -1,0 +1,472 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #eee;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* GLOBAL CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1200px;   /* PROFESSIONELE MAX WIDTH */
+    margin: 0 auto;
+    padding-inline: 30px;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.nav a:hover {
+    color: #ffdb55;
+}
+
+/* MOBILE MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+}
+
+/* MOBILE DROPDOWN */
+.nav.open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    background: rgba(0,0,0,0.95);
+    padding: 20px 30px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+/* NEON BACKGROUND */
+.neon-bg {
+    position: fixed;
+    inset: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255,225,100,0.10) 0px,
+        rgba(255,225,100,0.10) 3px,
+        transparent 3px,
+        transparent 90px
+    );
+    animation: neonScroll 22s linear infinite;
+}
+@keyframes neonScroll {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100%); }
+}
+
+/* HERO */
+.hero {
+    padding: 160px 0 120px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.hero-text .title {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-text span {
+    color: #ffdb55;
+}
+
+.subtitle {
+    opacity: .75;
+    margin-bottom: 20px;
+}
+
+.description {
+    opacity: .85;
+    max-width: 520px;
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #ffdb55;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: .2s;
+}
+.btn-primary:hover {
+    background: #ffe789;
+}
+
+/* HERO IMAGE */
+.hero-img img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* WELCOME */
+.welcome {
+    padding: 100px 0;
+    text-align: center;
+}
+.welcome p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+.credits {
+    opacity: .5;
+    margin-top: 10px;
+}
+
+/* PROGRAMMA */
+.programma {
+    padding: 100px 0;
+}
+.programma-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.prog-block {
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+.prog-block h3 {
+    color: #ffdb55;
+    margin-bottom: 12px;
+}
+
+/* 3 AANRADERS */
+.aanraders {
+    padding: 100px 0;
+}
+/* ============================
+   FILMS PAGINA – NETTE CARDS
+============================ */
+
+.filmspage {
+    padding: 140px 0 80px;
+}
+
+.filmspage h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Container voor elke film */
+.film-block {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Titels, meta tekst */
+.film-block h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.film-meta {
+    opacity: 0.7;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Afbeeldingen uniform maken */
+.film-block img {
+    width: 100%;
+    height: 420px;         /* Vast formaat zorgt voor consistentie */
+    object-fit: cover;     /* Snijdt bij indien nodig */
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Paragrafen */
+.film-block p {
+    margin-bottom: 16px;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .film-block {
+        padding: 25px;
+    }
+
+    .film-block img {
+        height: 260px;
+    }
+}
+
+
+/* LOCATIES */
+.locaties {
+    padding: 100px 0;
+    text-align: center;
+}
+.loc-list {
+    margin: 0 auto 25px;
+}
+.loc-list li {
+    cursor: pointer;
+    padding: 6px 0;
+    transition: .25s;
+}
+.loc-list li:hover {
+    color: #ffdb55;
+}
+
+/* MAP */
+.leaflet-map {
+    width: 100%;
+    height: 420px;
+    border-radius: 14px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.leaflet-tile {
+    filter: brightness(.55) contrast(1.2);
+}
+.neon-marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffeb55;
+    box-shadow: 0 0 12px #ffe76b, 0 0 30px #ffea70;
+    border: 2px solid #fff9a3;
+}
+.marker-active {
+    transform: scale(1.4);
+    box-shadow: 0 0 25px #ffd865, 0 0 55px #ffeaaa;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 70px 0;
+    opacity: .5;
+}
+
+/* ============================
+   TICKETS PAGE
+============================ */
+
+.tickets-page {
+    padding: 140px 0 80px;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ticket-card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ticket-card h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #ffdb55;
+}
+
+.ticket-card .price {
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-primary.large {
+    font-size: 18px;
+    padding: 16px 34px;
+}
+
+
+/* ============================
+   CHECKOUT PAGE
+============================ */
+
+.checkout {
+    padding: 140px 0 80px;
+}
+
+.checkout-box {
+    max-width: 500px;
+    margin: 35px auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 14px;
+}
+
+.checkout-box label {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.checkout-box input {
+    width: 80px;
+    padding: 6px;
+    margin-left: 10px;
+}
+
+.total {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+/* CHECKOUT ROWS */
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.ticket-row span {
+    font-size: 16px;
+    padding-right: 20px;
+    flex: 1;
+}
+
+.ticket-row input {
+    width: 90px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 16px;
+}
+
+/* TICKETS HEADER CENTER */
+.tickets-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tickets-header .title {
+    font-size: 46px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.tickets-header .subtitle {
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+
+/* CHECKOUT HEADER CENTERING */
+.checkout-header {
+    text-align: center;
+    margin-top: 140px; /* zodat het niet onder de header plakt */
+    margin-bottom: 40px;
+}
+
+.checkout-header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.checkout-header p {
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .nav { display: none; }
+    .hamburger { display: flex; }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .film-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .programma-grid {
+        grid-template-columns: 1fr;
+    }
+}
